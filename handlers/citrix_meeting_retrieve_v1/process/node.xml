@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="citrix_meeting_retrieve" name="Citrix Meeting Retrieve" schema_version="1.0" version="1">
+	<author>support@kineticdata.com</author>
+	<description>retrieve an existing meeting</description>
+	<helpurl></helpurl>
+	<visible>true</visible>
+	<deferrable>false</deferrable>
+	<parameters>
+		<parameter id="meeting_id" label="Meeting Id" required="true" tooltip="Unqiue Id of the meeting" />
+	</parameters>
+	<handler name="citrix_meeting_retrieve" version="1">
+		<infos>
+			<info name="client_id">&lt;%= @info['client_id'] %&gt;</info>
+			<info name="email">&lt;%= @info['email'] %&gt;</info>
+			<info name="password">&lt;%= @info['password'] %&gt;</info>
+		</infos>
+		<parameters>
+			<parameter name="meeting_id">&lt;%= @parameters['meeting_id'] %&gt;</parameter>
+		</parameters>
+	</handler>
+	<results format="xml">
+		<result name="createTime" />
+		<result name="passwordRequired" />
+		<result name="status" />
+		<result name="subject" />
+		<result name="endTime" />
+		<result name="conferenceCallInfo" />
+		<result name="startTime" />
+		<result name="duration" />
+		<result name="maxParticipants" />
+		<result name="meetingId" />
+		<result name="meetingKey" />
+		<result name="meetingType" />
+		<result name="uniqueMeetingId" />
+	</results>
+</taskDefinition>

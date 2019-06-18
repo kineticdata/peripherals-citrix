@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<taskInfo version="1.0">
+    <info name="client_id" description="API token for your application" />
+	<info name="email" description="Email address of user" />
+	<info name="password" type="encrypted" description="Password of user" />
+</taskInfo>

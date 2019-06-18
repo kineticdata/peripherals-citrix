@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="citrix_meeting_create" name="Citrix Meeting Create" schema_version="1.0" version="1">
+	<author>support@kineticdata.com</author>
+	<description>Create a new meeting</description>
+	<helpurl></helpurl>
+	<visible>true</visible>
+	<deferrable>false</deferrable>
+	<parameters>
+		<parameter id="subject" label="Subject" required="true" tooltip="Description of the meeting" />
+		<parameter id="starttime" label="Start Time" required="true" tooltip="ISO8601 UTC format yyyy-MM-ddThh:mm:ss" />
+		<parameter id="endtime" label="End Time" required="true" tooltip="ISO8601 UTC format yyyy-MM-ddThh:mm:ss" />
+		<parameter id="passwordrequired" label="Password Required" required="true" tooltip="Whether or not the meeting will require a password" menu="yes,no">no</parameter>
+		<parameter id="conferencecallinfo" label="Conference Call Info" required="true" tooltip="" menu="PSTN,Free,Hybrid,Private,VoIP" />
+		<parameter id="meetingtype" label="Meeting Type" required="true" tooltip="Type of meeting" menu="Immediate,Scheduled,Recurring" />
+	</parameters>
+	<handler name="citrix_meeting_create" version="1">
+		<infos>
+		    <info name="client_id">&lt;%= @info['client_id'] %&gt;</info>
+			<info name="email">&lt;%= @info['email'] %&gt;</info>
+			<info name="password">&lt;%= @info['password'] %&gt;</info>
+		</infos>
+		<parameters>
+			<parameter name="subject">&lt;%= @parameters['subject'] %&gt;</parameter>
+			<parameter name="starttime">&lt;%= @parameters['starttime'] %&gt;</parameter>
+			<parameter name="endtime">&lt;%= @parameters['endtime'] %&gt;</parameter>
+			<parameter name="passwordrequired">&lt;%= @parameters['passwordrequired'] %&gt;</parameter>
+			<parameter name="conferencecallinfo">&lt;%= @parameters['conferencecallinfo'] %&gt;</parameter>
+			<parameter name="meetingtype">&lt;%= @parameters['meetingtype'] %&gt;</parameter>
+		</parameters>
+	</handler>
+	<results format="xml">
+		<result name="joinUrl" />
+		<result name="meetingid" />
+		<result name="maxParticipants" />
+		<result name="uniqueMeetingId" />
+		<result name="conferenceCallInfo" />
+	</results>
+</taskDefinition>

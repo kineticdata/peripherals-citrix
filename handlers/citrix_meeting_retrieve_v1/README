@@ -1,0 +1,43 @@
+== Citrix Meeting Retrieve V1
+	This handler allows you to retrieve and existing meeting for Citrix.
+
+=== Parameters
+	[Meeting Id]
+		the unique id of the existing meeting					
+=== Results
+	[createTime]
+		When this meeting was created
+	[passwordRequired]
+		whether there is a password required for this meeting
+	[status]
+		whether the meeting is active or not
+	[subject]
+		The subject of this meeting
+	[endTime]
+		Scheduled end time of this meeting
+	[conferenceCallInfo]
+		Info including phone numbers and access code
+	[startTime]
+		Scheduled start time for this meeeting
+	[duration]
+		Time duration of the meeting
+	[maxParticipants]
+		How many participants are allowed in the meeting
+	[meetingId]
+		Id value of the meeting
+	[meetingKey]
+		Key value of the meeting
+	[meetingType]
+		Type of meeting immediate, scheduled, or recurring
+	[uniqueMeetingId]
+		Id unique to this meeting if recurring
+
+==== Sample Configuration
+	Meeting Id : 123456
+	
+=== Detailed Description
+	This handler allows you to retrieve an existing meeting for Citrix. It uses
+	the Citrix REST API to complete this action.
+	
+=== Info
+	The user oauth token

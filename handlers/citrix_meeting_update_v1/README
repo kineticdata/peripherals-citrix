@@ -1,0 +1,39 @@
+== Citrix Meeting Update V1
+	This handler allows you to update an existing meeting for Citrix.
+
+=== Parameters
+	[Meeting Id]
+		The Id number of the existing meeting
+	[Subject]
+		The description of the existing meeting
+	[Start Time]
+		Start time of the meeting in iso8601 UTC format (yyyy-MM-ddTHH:mm:ss)
+	[End Time]
+		End time of the meeting in iso8601 UTC format (yyyy-MM-ddTHH:mm:ss)
+	[Password Required]
+		Wether the meeting will require a password
+	[Conference Call Info]
+		info type for conference call
+	[Meeting Type]
+		Type of meeting (immediate, scheduled, or recurring)
+	[Unique Meeting Instance]
+		The unique meeting instance when the meeting in recurring
+					
+=== Results
+	This handler returns no results
+	
+==== Sample Configuration
+	Subject : Test Meeting
+	Start Time : 2014-08-09T09:00:00
+	End Time : 2014-08-09T10:00:00
+	Password Required : no
+	Conference Call Info : Hybrid
+	Meeting Type : Scheduled
+	Unique Meeting Instance : 123456
+	
+=== Detailed Description
+	This handler allows you to update an existing meeting for Citrix. It uses
+	the Citrix REST API to complete this action.
+	
+=== Info
+	The user oauth token
